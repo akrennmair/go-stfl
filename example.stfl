@@ -1,0 +1,116 @@
+*
+*  STFL - The Structured Terminal Forms Language/Library
+*  Copyright (C) 2006  Clifford Wolf <clifford@clifford.at>
+*
+*  This library is free software; you can redistribute it and/or
+*  modify it under the terms of the GNU Lesser General Public
+*  License as published by the Free Software Foundation; either
+*  version 3 of the License, or (at your option) any later version.
+*  
+*  This library is distributed in the hope that it will be useful,
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+*  Lesser General Public License for more details.
+*  
+*  You should have received a copy of the GNU Lesser General Public
+*  License along with this library; if not, write to the Free Software
+*  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+*  MA 02110-1301 USA
+*
+*  example.stfl: STFL Code for example.c
+*
+
+vbox
+  hbox
+    .expand:0
+    @style_normal:bg=yellow,fg=black
+    label
+      text:'Little STFL example program'
+    label[label one]
+      text[label one text]:"Line number one"
+    label["2nd label"]
+      text[also possible to use : here now]:"Fun! Fun! Fun!"
+    label["quotes are needed for a closing bracket: ]"]
+      text[c_like_names_are_still_recommended_thought]:"Whatever"
+
+  table
+    .expand:0
+
+    @input#style_focus:bg=blue,fg=white,attr=bold
+    @input#style_normal:bg=blue,fg=black
+    @input#.border:rtb
+
+    @L#style_normal:fg=red
+    @L#.expand:0
+    @L#.border:ltb
+    @L#.spacer:r
+
+    label#L
+      text:'Field A:'
+    input
+      .colspan:3
+      text[value_a]:'foo'
+    vbox
+      .rowspan:2
+      .expand:0
+      .border:lrtb
+      label text:'this'
+      label text:'is a'
+      label text:'test'
+    tablebr
+    label#L
+      text:'Field B:'
+    input
+      text[value_b]:'bar'
+    label#L
+      text:'Field C:'
+    input
+      text[value_c]:'Hello'"'"'World!'
+
+  hbox
+    vbox
+      vbox
+        style_normal:bg=red
+        @label#style_normal:bg=white,fg=black
+        label .tie:tc
+          text:"A rather long test label"
+        label .tie:l
+          text:"Short (left)"
+        label .tie:rb
+          text:"Short (right)"
+      vbox
+        tie:lrb
+        style_normal:bg=blue
+        @label#style_normal:bg=white,fg=black
+        label .tie:c
+          text:"A rather long test label"
+        label .tie:l
+          text:"Short (left)"
+        label .tie:r
+          text:"Short (right)"
+    vbox
+      tie:r
+      style_normal:bg=green
+      @label#style_normal:bg=white,fg=black
+      label
+        text:"A rather long test label"
+      label .tie:l
+        text:"Short (left)"
+      label .tie:r
+        text:"Short (right)"
+
+  textview[textview]
+    .expand:0
+    @style_blue_normal:fg=blue
+    @style_red_normal:fg=red
+    @style_bold_normal:attr=bold,attr=underline
+    richtext:1
+      listitem text:"This is normal text"
+      listitem text:"Normal <blue>blue Text <red>red Text </>normal"
+      listitem text:"Multi line: <blue>first line"
+      listitem text:"this is the 2nd line, still blue"
+      listitem text:"3rd line</>, and normal again!"
+      listitem text:"a smaller-than sign: <>"
+      listitem text:"a greater-than sign: >"
+      listitem text:"<bold>bold text</> normal text"
+
