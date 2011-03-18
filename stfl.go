@@ -4,11 +4,18 @@ package stfl
 #include <stdlib.h>
 #include <stfl.h>
 #include "stfl_wrapper.h"
+#include <locale.h>
 */
 import "C"
 import "unsafe"
 
 type Form C.stfl_form
+
+func Init() {
+	emptystr := C.CString("")
+	defer C.free(unsafe.Pointer(emptystr))
+	C.setlocale(C.LC_ALL, emptystr)
+}
 
 func Create(text string) *Form {
 	ctext := C.CString(text)
@@ -43,8 +50,8 @@ func(form *Form) Set(name string, value string) {
 	C.stfl_set_wrapper((*C.stfl_form)(form), cname, cvalue)
 }
 
-func(form *Form) GetFocus() {
-	C.GoString(C.stfl_get_focus_wrapper((*C.stfl_form)(form)))
+func(form *Form) GetFocus() string {
+	return C.GoString(C.stfl_get_focus_wrapper((*C.stfl_form)(form)))
 }
 
 func(form *Form) SetFocus(name string) {

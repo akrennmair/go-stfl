@@ -5,6 +5,10 @@ import (
 	"stfl"
 )
 
+func init() {
+	stfl.Init()
+}
+
 func main() {
 	f := stfl.Create("<example.stfl>")
 
