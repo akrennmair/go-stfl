@@ -1,6 +1,6 @@
 typedef struct stfl_form stfl_form;
 
-static struct stfl_ipool * ipool = NULL;
+struct stfl_ipool * ipool = NULL;
 
 static void flush(void) {
 	if (!ipool) {
