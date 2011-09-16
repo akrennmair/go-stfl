@@ -1,6 +1,8 @@
 package stfl
 
 /*
+#cgo pkg-config: stfl
+#cgo LDFLAGS: -lncursesw
 #include <stdlib.h>
 #include <stfl.h>
 #include "stfl_wrapper.h"
