@@ -2,7 +2,7 @@ package stfl
 
 /*
 #cgo pkg-config: stfl
-#cgo LDFLAGS: -lncursesw
+#cgo LDFLAGS: -lncursesw -lpthread
 #include <stdlib.h>
 #include <stfl.h>
 #include "stfl_wrapper.h"
