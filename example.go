@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"stfl"
+	stfl "github.com/akrennmair/go-stfl"
 )
 
 func init() {

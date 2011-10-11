@@ -1,6 +1,6 @@
 include $(GOROOT)/src/Make.inc
 
-TARG=stfl
+TARG=github.com/akrennmair/go-stfl
 CGOFILES=stfl.go
 CLEANFILES+=example
 
