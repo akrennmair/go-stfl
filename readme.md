@@ -30,5 +30,5 @@ go install
 
 4. Run example
 ```bash
-$GOPATH/bin/example
+$GOPATH/bin/example ; reset
 ```
